@@ -1,7 +1,6 @@
 package ch.guillod.apps.band.manager;
 
 import ch.guillod.apps.band.manager.controller.repository.MusicianRepository;
-import ch.guillod.apps.band.manager.domain.Musician;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -20,10 +19,6 @@ public class Application {
 
     @Bean
     public CommandLineRunner commandLineRunner(MusicianRepository musicianRepository) {
-        return args -> {
-            for (Musician musician : musicianRepository.findAll()) {
-                LOGGER.info(musician.toString());
-            }
-        };
+        return args -> LOGGER.info("Band manager is running !");
     }
 }
